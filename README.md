@@ -1,0 +1,1 @@
+# automatic-ec2-shutdown

@@ -28,6 +28,7 @@ Build a serverless automation solution that:
 
 # 🏗️ Architecture
 
+```text
 +----------------------+
 |  Amazon EventBridge  |
 |   (Scheduled Rule)   |
@@ -44,64 +45,79 @@ Build a serverless automation solution that:
 |    Amazon EC2        |
 |   Stop Instance API  |
 +----------------------+
+```
+
+---
+
+# 🛠️ AWS Services Used
+
+| AWS Service | Purpose |
+|---|---|
+| Amazon EC2 | Virtual machine instance |
+| AWS Lambda | Executes automation logic |
+| Amazon EventBridge | Triggers Lambda on schedule |
+| IAM | Grants required permissions |
+| CloudWatch Logs | Stores execution logs |
+
+---
+
+# ⚙️ How the Project Works
+
+1. Amazon EventBridge triggers the Lambda function based on a schedule.
+2. Lambda executes Python code using Boto3.
+3. The function calls the EC2 StopInstances API.
+4. The EC2 instance changes from `running` to `stopped`.
+5. Execution logs are stored in CloudWatch Logs.
+
+---
 
 
+---
 
-🛠️ AWS Services Used
+# 🧪 Testing Steps
 
+1. Launch an EC2 instance
+2. Deploy the Lambda function
+3. Attach IAM role with EC2 permissions
+4. Create EventBridge scheduled rule
+5. Trigger Lambda manually for testing
+6. Verify EC2 state changes from:
+   - `running`
+   - to `stopped`
+7. Check logs in CloudWatch
 
-AWS Service	Purpose
-Amazon EC2	Virtual machine instance
-AWS Lambda	Executes automation logic
-Amazon EventBridge	Triggers Lambda on schedule
-IAM	Grants required permissions
-CloudWatch Logs	Stores execution logs
+---
 
-
-
-⚙️ How the Project Works
-Amazon EventBridge triggers the Lambda function based on a schedule.
-Lambda executes Python code using Boto3.
-The function calls the EC2 StopInstances API.
-The EC2 instance changes from running to stopped.
-Execution logs are stored in CloudWatch Logs.
-
-
-
-🧪 Testing Steps
-Launch an EC2 instance
-Deploy the Lambda function
-Attach IAM role with EC2 permissions
-Create EventBridge scheduled rule
-Trigger Lambda manually for testing
-Verify EC2 state changes from:
-running
-to stopped
-Check logs in CloudWatch
-
-
-📚 Learning Outcomes
+# 📚 Learning Outcomes
 
 This project helped in understanding:
 
-AWS Lambda automation
-Serverless architecture
-Amazon EC2 management
-IAM roles and policies
-EventBridge scheduling
-CloudWatch monitoring
-Boto3 AWS SDK usage
+- AWS Lambda automation
+- Serverless architecture
+- Amazon EC2 management
+- IAM roles and policies
+- EventBridge scheduling
+- CloudWatch monitoring
+- Boto3 AWS SDK usage
 
+---
 
+# 🌟 Key Benefits
 
-🌟 Key Benefits
-Reduces AWS costs
-Eliminates manual effort
-Fully serverless solution
-Easy to scale
-Simple and lightweight architecture
+- Reduces AWS costs
+- Eliminates manual effort
+- Fully serverless solution
+- Easy to scale
+- Simple and lightweight architecture
 
+---
 
-👨‍💻 Author
+# 👨‍💻 Author
 
 DIVESH TAYADE
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving the repository a star.
